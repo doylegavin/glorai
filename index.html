@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlorAI - An tIntleacht Shaorga As Gaeilge</title>
+    <meta name="description" content="The first AI Voicebot that speaks Irish. Preserving the Irish language through cutting-edge technology.">
+    <meta name="google" content="notranslate">
+    <link rel="stylesheet" href="styles.css?v=2.6">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍀</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <span class="logo-icon">🍀</span>
+                    <span class="logo-text">GlorAI</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#features" class="nav-link" data-en="Features" data-ga="Gnéithe">Features</a>
+                    <a href="#about" class="nav-link" data-en="About" data-ga="Faoi">About</a>
+                    <div class="language-toggle">
+                        <button type="button" id="langToggle" class="lang-button">
+                            <span class="lang-text">EN</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span data-en="The first <span class='ai-voicebot'>AI Voicebot</span><br>that speaks <span class='irish-text-with-waves'><span class='irish-text'>Irish</span><span class='text-sound-waves'><span class='wave'></span><span class='wave'></span><span class='wave'></span><span class='wave'></span><span class='wave'></span></span></span>" data-ga="An chéad <span class='ai-voicebot'>AI Voicebot</span><br>a labhraíonn <span class='irish-text-with-waves'><span class='irish-text'>As Gaeilge</span><span class='text-sound-waves'><span class='wave'></span><span class='wave'></span><span class='wave'></span><span class='wave'></span><span class='wave'></span></span></span>">The first <span class="ai-voicebot">AI Voicebot</span><br>that speaks <span class="irish-text-with-waves"><span class="irish-text">Irish</span><span class="text-sound-waves"><span class="wave"></span><span class="wave"></span><span class="wave"></span><span class="wave"></span><span class="wave"></span></span></span></span>
+                    </h1>
+                    
+                    <!-- Mobile Form - shown only on mobile between title and description -->
+                    <div class="early-access-form mobile-form">
+                        <h3 class="form-title" data-en="Get Early Access" data-ga="Faigh Rochtain Luath">Get Early Access</h3>
+                        <p class="form-subtitle" data-en="Be among the first to experience GlorAI" data-ga="Bí i measc na gcéad daoine a bhfaighidh taithí ar GlorAI">Be among the first to experience GlorAI</p>
+                     
+                        <form class="signup-form" id="mobileSignupForm">
+                            <div class="form-row">
+                                <input type="text" id="mobileName" name="name" class="form-input" placeholder="Your name" data-placeholder-en="Your name" data-placeholder-ga="D'ainm" required>
+                                <input type="email" id="mobileEmail" name="email" class="form-input" placeholder="Your email" data-placeholder-en="Your email" data-placeholder-ga="Do ríomhphost" required>
+                                <button type="submit" class="submit-btn">
+                                    <span data-en="Get Access" data-ga="Faigh Rochtain">Get Access</span>
+                                    <div class="button-spinner" id="mobileSpinner" style="display: none;"></div>
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div class="signup-stats">
+                            <span class="stat-number" id="mobile-waitlist-count">247</span>
+                            <span class="stat-label" data-en="people signed up" data-ga="duine cláraithe">people signed up</span>
+                        </div>
+                        
+                        <div class="success-message" id="mobileSuccessMessage" style="display: none;">
+                            <div class="success-icon">✅</div>
+                            <h4 data-en="Thank you!" data-ga="Go raibh maith agat!">Thank you!</h4>
+                            <p data-en="You're on the list! We'll notify you when GlorAI is ready." data-ga="Tá tú ar an liosta! Cuirfimid ar an eolas tú nuair a bheidh GlorAI réidh.">You're on the list! We'll notify you when GlorAI is ready.</p>
+                        </div>
+                    </div>
+                    
+                    <p class="hero-description" data-en="Preserve and promote the Irish language through cutting-edge AI technology. Experience the future of Irish conversation." data-ga="Caomhnaigh agus cuir chun cinn teanga na nGael sa todhchaí teicneolaíochta. Bí ar an gcéad duine a bhfaighidh rochtain ar an AI réabhlóideach seo.">
+                        Preserve and promote the Irish language through cutting-edge AI technology. Experience the future of Irish conversation.
+                    </p>
+                </div>
+                <div class="hero-visual">
+                    <!-- Early Access Form -->
+                    <div class="early-access-form">
+                        <h3 class="form-title" data-en="Get Early Access" data-ga="Faigh Rochtain Luath">Get Early Access</h3>
+                        <p class="form-subtitle" data-en="Be among the first to experience GlorAI" data-ga="Bí i measc na gcéad daoine a bhfaighidh taithí ar GlorAI">Be among the first to experience GlorAI</p>
+                     
+                        <form class="signup-form" id="signupForm">
+                            <div class="form-row">
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Your name" data-placeholder-en="Your name" data-placeholder-ga="D'ainm" required>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Your email" data-placeholder-en="Your email" data-placeholder-ga="Do ríomhphost" required>
+                                <button type="submit" class="submit-btn">
+                                    <span data-en="Get Access" data-ga="Faigh Rochtain">Get Access</span>
+                                    <div class="button-spinner" id="spinner" style="display: none;"></div>
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div class="signup-stats">
+                            <span class="stat-number" id="waitlist-count">247</span>
+                            <span class="stat-label" data-en="people signed up" data-ga="duine cláraithe">people signed up</span>
+                        </div>
+                        
+                        <div class="success-message" id="successMessage" style="display: none;">
+                            <div class="success-icon">✅</div>
+                            <h4 data-en="Thank you!" data-ga="Go raibh maith agat!">Thank you!</h4>
+                            <p data-en="You're on the list! We'll notify you when GlorAI is ready." data-ga="Tá tú ar an liosta! Cuirfimid ar an eolas tú nuair a bheidh GlorAI réidh.">You're on the list! We'll notify you when GlorAI is ready.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title" data-en="The Digital Irish Revolution" data-ga="Réabhlóid na Gaeilge Digití">Réabhlóid na Gaeilge Digití</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎙️</div>
+                        <h3 data-en="Natural Conversation" data-ga="Comhrá Nádúrtha">Comhrá Nádúrtha</h3>
+                        <p data-en="Talk to the AI as you would with a friend. It understands different dialects and natural Irish expressions." data-ga="Labhair leis an AI mar a dhéanfá le cara. Tuigeann sé canúintí éagsúla agus friotal nádúrtha na Gaeilge.">Labhair leis an AI mar a dhéanfá le cara. Tuigeann sé canúintí éagsúla agus friotal nádúrtha na Gaeilge.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3 data-en="True Understanding" data-ga="Fíor-Thuiscint">Fíor-Thuiscint</h3>
+                        <p data-en="Uses the latest AI technology to fully comprehend Irish conversation and context." data-ga="Úsáideann ár dteicneolaíocht AI is déanaí chun ciall iomlán a bhaint as comhrá Gaeilge.">Úsáideann ár dteicneolaíocht AI is déanaí chun ciall iomlán a bhaint as comhrá Gaeilge.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏛️</div>
+                        <h3 data-en="History & Culture" data-ga="Stair agus Cultúr">Stair agus Cultúr</h3>
+                        <p data-en="Deep knowledge of Irish history, literature, and culture - integrated into every conversation." data-ga="Eolas domhain ar stair, litríocht, agus cultúr na hÉireann - mar chuid de gach comhrá.">Eolas domhain ar stair, litríocht, agus cultúr na hÉireann - mar chuid de gach comhrá.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3 data-en="Language Learning" data-ga="Foghlaim Teanga">Foghlaim Teanga</h3>
+                        <p data-en="Helps Irish learners at every level, from beginner to fluent speaker." data-ga="Cabhraíonn sé le foghlaimeoirí Gaeilge ag gach leibhéal, ó thosaitheoir go dtí cainteoir líofa.">Cabhraíonn sé le foghlaimeoirí Gaeilge ag gach leibhéal, ó thosaitheoir go dtí cainteoir líofa.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3 data-en="Global Community" data-ga="Pobal Domhanda">Pobal Domhanda</h3>
+                        <p data-en="Connect with Irish speakers worldwide and preserve our language together." data-ga="Ceangail le cainteoirí Gaeilge ar fud an domhain agus caomhnaigh ár dteanga le chéile.">Ceangail le cainteoirí Gaeilge ar fud an domhain agus caomhnaigh ár dteanga le chéile.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 data-en="Fast & Reliable" data-ga="Tapa agus Iontaofa">Tapa agus Iontaofa</h3>
+                        <p data-en="Lightning-fast responses with accurate understanding of context and meaning." data-ga="Freagraí meandaracha le tuiscint cheart ar chomhthéacs agus ciall.">Freagraí meandaracha le tuiscint cheart ar chomhthéacs agus ciall.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 data-en="Our Vision" data-ga="Ár bhFís">Ár bhFís</h2>
+                        <p class="lead" data-en="Irish is a living, rich language that is growing in the digital world. With GlorAI, we're giving AI the opportunity to speak in the language of our ancestors." data-ga="Tá an Ghaeilge ina teanga bheo, dhomhain atá ag fás sa domhan digiteach. Le GlorAI, tá muid ag tabhairt deis don AI labhairt i dteanga ár sinnsir.">
+                            Tá an Ghaeilge ina teanga bheo, dhomhain atá ag fás sa domhan digiteach. 
+                            Le GlorAI, tá muid ag tabhairt deis don AI labhairt i dteanga ár sinnsir.
+                        </p>
+                        <p data-en="We're not just creating cutting-edge technology, we're ensuring that Irish has a place in the digital future. This is a crucial step in preserving and promoting our linguistic heritage." data-ga="Ní hamháin go bhfuil muid ag cruthú teicneolaíochta nua-aimseartha, ach tá muid ag cinntiú go mbeidh áit ag an nGaeilge sa todhchaí digiteach. Is céim thábhachtach é seo i gcaomhnú agus i gcur chun cinn ár n-oidhreachta teanga.">
+                            Ní hamháin go bhfuil muid ag cruthú teicneolaíochta nua-aimseartha, 
+                            ach tá muid ag cinntiú go mbeidh áit ag an nGaeilge sa todhchaí digiteach. 
+                            Is céim thábhachtach é seo i gcaomhnú agus i gcur chun cinn ár n-oidhreachta teanga.
+                        </p>
+                        <div class="mission-points">
+                            <div class="point">
+                                <span class="point-icon">✨</span>
+                                <span data-en="Preserving Irish in the digital age" data-ga="Caomhnú na Gaeilge sa ré dhigiteach">Caomhnú na Gaeilge sa ré dhigiteach</span>
+                            </div>
+                            <div class="point">
+                                <span class="point-icon">🚀</span>
+                                <span data-en="Irish-language technology innovation" data-ga="Nuálaíocht teicneolaíochta As Gaeilge">Nuálaíocht teicneolaíochta As Gaeilge</span>
+                            </div>
+                            <div class="point">
+                                <span class="point-icon">🤝</span>
+                                <span data-en="Strengthening the speaker community" data-ga="Pobal cainteoirí a neartú">Pobal cainteoirí a neartú</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="ireland-outline">
+                            <svg viewBox="0 0 200 300" class="ireland-svg">
+                                <path d="M50 50 Q80 20 120 40 Q160 30 180 70 Q190 100 170 140 Q180 180 160 220 Q140 260 100 250 Q60 270 40 230 Q20 190 30 150 Q10 110 30 80 Q35 60 50 50" 
+                                      fill="url(#irelandGradient)" stroke="#2D5A2D" stroke-width="2"/>
+                                <defs>
+                                    <linearGradient id="irelandGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#4ADE80;stop-opacity:0.3" />
+                                        <stop offset="100%" style="stop-color:#16A34A;stop-opacity:0.6" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🍀</span>
+                        <span class="logo-text">GlorAI</span>
+                    </div>
+                    <p data-en="The AI that speaks Irish" data-ga="An AI a labhraíonn As Gaeilge">An AI a labhraíonn As Gaeilge</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#privacy" data-en="Privacy" data-ga="Príobháideacht">Príobháideacht</a>
+                    <a href="#terms" data-en="Terms" data-ga="Téarmaí">Téarmaí</a>
+                    <a href="#contact" data-en="Contact" data-ga="Teagmháil">Teagmháil</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="&copy; 2024 GlorAI. All rights reserved." data-ga="&copy; 2024 GlorAI. Gach ceart ar cosaint.">&copy; 2024 GlorAI. Gach ceart ar cosaint.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=2.3"></script>
+</body>
+</html> 

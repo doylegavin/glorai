@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Google Form Entry IDs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .step {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #007cba;
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 How to Find Google Form Entry IDs</h1>
+    
+    <p>To connect your landing page form to your Google Form, you need to find the entry IDs for each field. Here's how:</p>
+    
+    <div class="step">
+        <h3>Step 1: Open Your Google Form</h3>
+        <p>Go to your Google Form: <br>
+        <code>https://docs.google.com/forms/d/e/1FAIpQLSdqBSUPmkABigWFVJJAiSOOh0UUfRWHuLtLiu14Rz_wMuS3dA/viewform</code></p>
+    </div>
+    
+    <div class="step">
+        <h3>Step 2: Open Browser Developer Tools</h3>
+        <p>Right-click on the page and select "Inspect" or press <code>F12</code></p>
+    </div>
+    
+    <div class="step">
+        <h3>Step 3: Find the Entry IDs</h3>
+        <p>In the developer tools:</p>
+        <ol>
+            <li>Go to the "Elements" or "Inspector" tab</li>
+            <li>Press <code>Ctrl+F</code> (or <code>Cmd+F</code> on Mac) to search</li>
+            <li>Search for <code>entry.</code></li>
+            <li>Look for input fields with names like:</li>
+        </ol>
+        <pre>
+&lt;input type="text" name="entry.1234567890" ...&gt;
+&lt;input type="email" name="entry.0987654321" ...&gt;
+        </pre>
+    </div>
+    
+    <div class="step">
+        <h3>Step 4: Update the JavaScript</h3>
+        <p>Once you find the entry IDs, update the <code>script.js</code> file:</p>
+        <pre>
+// Replace these with your actual entry IDs:
+formData.append('entry.YOUR_NAME_ENTRY_ID', name);
+formData.append('entry.YOUR_EMAIL_ENTRY_ID', email);
+        </pre>
+    </div>
+    
+    <div class="step">
+        <h3>Alternative Method: View Source</h3>
+        <p>You can also:</p>
+        <ol>
+            <li>Right-click on your Google Form page</li>
+            <li>Select "View Page Source"</li>
+            <li>Search for <code>entry.</code> to find the field IDs</li>
+        </ol>
+    </div>
+    
+    <div class="step">
+        <h3>🎯 Quick Test</h3>
+        <p>After updating the entry IDs, test your form by:</p>
+        <ol>
+            <li>Filling out the form on your landing page</li>
+            <li>Checking if responses appear in your Google Form responses</li>
+            <li>If they don't appear, double-check the entry IDs</li>
+        </ol>
+    </div>
+    
+    <h2>📝 Current Form Structure</h2>
+    <p>Your Google Form appears to have:</p>
+    <ul>
+        <li><strong>Name field</strong> - Entry ID: <code>entry.1045781291</code> (estimated)</li>
+        <li><strong>Email field</strong> - Entry ID: <code>entry.1166974658</code> (estimated)</li>
+    </ul>
+    
+    <p><strong>Note:</strong> The entry IDs above are estimates. Please follow the steps above to find the correct ones.</p>
+    
+    <hr>
+    <p><em>Once you have the correct entry IDs, your landing page will automatically submit to your Google Form!</em></p>
+</body>
+</html> 

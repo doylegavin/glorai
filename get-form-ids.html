@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Google Form Entry IDs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .step {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .code {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        .highlight {
+            background: #fef3c7;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        button {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #059669;
+        }
+        .result {
+            background: #ecfdf5;
+            border: 1px solid #10b981;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 Google Form Entry ID Extractor</h1>
+    
+    <div class="step">
+        <h3>Step 1: Open Your Google Form</h3>
+        <p>Go to your <strong>PUBLIC</strong> form (what users see):</p>
+        <div class="code">
+https://docs.google.com/forms/d/e/1FAIpQLSdqBSUPmkABigWFVJJAiSOOh0UUfRWHuLtLiu14Rz_wMuS3dA/viewform
+        </div>
+        <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdqBSUPmkABigWFVJJAiSOOh0UUfRWHuLtLiu14Rz_wMuS3dA/viewform', '_blank')">Open Your Form</button>
+    </div>
+
+    <div class="step">
+        <h3>Step 2: Extract Entry IDs</h3>
+        <p>On your form page:</p>
+        <ol>
+            <li>Right-click → <strong>Inspect Element</strong></li>
+            <li>Press <strong>Ctrl+F</strong> (Cmd+F on Mac)</li>
+            <li>Search for: <span class="highlight">entry.</span></li>
+            <li>Look for lines like: <code>&lt;input name="entry.123456789"</code></li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>Step 3: Test Method</h3>
+        <p>Fill out this test form with fake data, then check the URL for entry IDs:</p>
+        
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdqBSUPmkABigWFVJJAiSOOh0UUfRWHuLtLiu14Rz_wMuS3dA/viewform?embedded=true" 
+                width="100%" height="400" frameborder="0">Loading…</iframe>
+        
+        <p><strong>After submitting:</strong> The URL will show entry IDs like <code>entry.123456789=TestName&entry.987654321=test@email.com</code></p>
+    </div>
+
+    <div class="step">
+        <h3>Step 4: Enter Your Entry IDs</h3>
+        <p>Once you find them, enter them here to generate the code:</p>
+        
+        <label>Name Field Entry ID:</label><br>
+        <input type="text" id="nameEntry" placeholder="entry.123456789" style="width: 200px; padding: 5px; margin: 5px 0;"><br>
+        
+        <label>Email Field Entry ID:</label><br>
+        <input type="text" id="emailEntry" placeholder="entry.987654321" style="width: 200px; padding: 5px; margin: 5px 0;"><br>
+        
+        <button onclick="generateCode()">Generate Code</button>
+        
+        <div id="generatedCode" style="display: none;">
+            <h4>📋 Copy This Code to script.js:</h4>
+            <div class="result">
+                <pre id="codeOutput"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateCode() {
+            const nameEntry = document.getElementById('nameEntry').value.trim();
+            const emailEntry = document.getElementById('emailEntry').value.trim();
+            
+            if (!nameEntry || !emailEntry) {
+                alert('Please enter both entry IDs');
+                return;
+            }
+            
+            const code = `// Replace these lines in script.js:
+formData.append('${nameEntry}', name);
+formData.append('${emailEntry}', email);`;
+            
+            document.getElementById('codeOutput').textContent = code;
+            document.getElementById('generatedCode').style.display = 'block';
+        }
+    </script>
+
+    <div class="step">
+        <h3>Why debug.html?</h3>
+        <p><strong>debug.html</strong> is a simplified test page that:</p>
+        <ul>
+            <li>✅ Tests if the styling works</li>
+            <li>✅ Tests if the form submission works</li>
+            <li>✅ Shows error messages in real-time</li>
+            <li>✅ Isolates problems from the main page</li>
+        </ul>
+        <p>It's like a "sandbox" to test things without breaking your main page.</p>
+    </div>
+</body>
+</html> 

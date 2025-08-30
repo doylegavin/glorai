@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Google Form Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .form-container {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #10b981;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #059669;
+        }
+        .info {
+            background: #dbeafe;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>🧪 Direct Google Form Test</h2>
+        
+        <div class="info">
+            <strong>This form submits directly to your Google Form</strong><br>
+            If this works, the data will appear in your Google Form responses immediately.
+        </div>
+        
+        <!-- Direct form submission to Google Forms -->
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdqBSUPmkABigWFVJJAiSOOh0UUfRWHuLtLiu14Rz_wMuS3dA/formResponse" 
+              method="POST" 
+              target="hidden_iframe"
+              onsubmit="submitted=true;">
+            
+            <label for="name">Name:</label>
+            <input type="text" name="entry.1096888862" placeholder="Enter your name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" name="entry.1534687542" placeholder="Enter your email" required>
+            
+            <button type="submit">Submit Test</button>
+        </form>
+        
+        <!-- Hidden iframe to capture the response -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { document.getElementById('success').style.display='block'; }"></iframe>
+        
+        <div id="success" style="display:none; margin-top: 20px; padding: 15px; background: #ecfdf5; border: 1px solid #10b981; border-radius: 5px;">
+            <strong>✅ Test submitted!</strong><br>
+            Check your Google Form responses to see if the data appeared.
+        </div>
+    </div>
+    
+    <script>
+        var submitted = false;
+    </script>
+    
+    <div style="margin-top: 30px; padding: 15px; background: #fef3c7; border-radius: 5px;">
+        <h3>📋 Instructions:</h3>
+        <ol>
+            <li>Fill out the form above with test data</li>
+            <li>Click "Submit Test"</li>
+            <li>Go to your Google Form and check the "Responses" tab</li>
+            <li>If the data appears, your entry IDs are correct!</li>
+        </ol>
+    </div>
+</body>
+</html> 

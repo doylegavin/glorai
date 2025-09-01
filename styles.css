@@ -132,22 +132,25 @@ body {
 }
 
 .lang-button {
-    background: var(--slate-100);
-    border: 1px solid var(--slate-300);
-    border-radius: 0.5rem;
-    padding: 0.375rem 0.75rem;
+    background: var(--white);
+    border: 2px solid var(--slate-300);
+    border-radius: 0.625rem;
+    padding: 0.5rem 1rem;
     cursor: pointer;
     transition: var(--transition);
-    font-weight: 500;
+    font-weight: 600;
     color: var(--slate-700);
-    font-size: 0.875rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    min-width: 60px;
+    justify-content: center;
+    position: relative;
 }
 
 .lang-button:hover {
-    background: var(--slate-200);
+    background: var(--slate-100);
     border-color: var(--slate-400);
 }
 
@@ -159,6 +162,31 @@ body {
     background: var(--emerald-100);
     border-color: var(--emerald-300);
     color: var(--emerald-700);
+}
+
+/* Language toggle conditional styling */
+.lang-button::after {
+    content: '';
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 700;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+/* When showing EN (Irish mode), show GA in green */
+.lang-button[data-lang="en"]::after {
+    content: 'GA';
+    color: var(--emerald-600);
+}
+
+/* When showing GA (English mode), show EN in orange */
+.lang-button[data-lang="ga"]::after {
+    content: 'EN';
+    color: var(--orange-500);
 }
 
 .lang-text {
@@ -429,6 +457,10 @@ body {
         0 10px 15px -3px rgba(16, 185, 129, 0.4),
         0 4px 6px -2px rgba(16, 185, 129, 0.2);
     background: linear-gradient(135deg, var(--emerald-500) 0%, var(--emerald-400) 100%);
+}
+
+.submit-btn:hover span {
+    color: var(--white);
 }
 
 .submit-btn:active {

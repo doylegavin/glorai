@@ -115,6 +115,8 @@ function updateLangButton(animate = true) {
     const langText = langToggle.querySelector('.lang-text');
     if (langText) {
         langText.textContent = currentLanguage === 'ga' ? 'EN' : 'GA';
+        // Set data attribute for conditional styling
+        langToggle.setAttribute('data-lang', currentLanguage);
     }
     
     // Add visual feedback only if animate is true
@@ -494,6 +496,8 @@ document.addEventListener('keydown', function(e) {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize language to Irish and update content
+    updateLanguage();
     // Initialize language button display
     updateLangButton(false);
     

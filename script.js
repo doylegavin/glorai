@@ -56,8 +56,8 @@ function updateLanguage() {
     elements.forEach(element => {
         const text = currentLanguage === 'en' ? element.getAttribute('data-en') : element.getAttribute('data-ga');
         
-        // Handle HTML content in hero title
-        if (element.innerHTML.includes('<span')) {
+        // Handle HTML content (span, anchor tags, etc.)
+        if (text && (text.includes('<span') || text.includes('<a') || text.includes('<br'))) {
             element.innerHTML = text;
         } else {
             element.textContent = text;
